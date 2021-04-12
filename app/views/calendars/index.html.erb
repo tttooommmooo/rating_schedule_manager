@@ -1,0 +1,28 @@
+<%= form_with model: hoge, url: , class: 'form' do |f| %>
+  <%= f.label :日付を選択, class: 'lavel' %>
+  <%= f.date_field :date, class: 'date-select' %>
+  <%= f.label :予定を入力, class: 'lavel' %>
+  <%= f.text_field :plan, class: 'text-input' %>
+  <%= f.submit '保存' %>
+<% end %>
+
+
+
+<div class=calendar>
+  <% @week_days.each do |day| %>
+    <div class='item'>
+      <div class='date'>
+        <%= day[:hoge] =%>/<%= day[:hoge] =%><%= day[:hoge] %>
+      </div>
+      <ul class='content'>
+      <% if day[:hoge].length != 0 %>
+        <% day[:hoge].each do |plan| %>
+          <li class='plan-list'>・<%= plan %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+
